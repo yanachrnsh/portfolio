@@ -1,0 +1,44 @@
+.Navbar {
+	display: flex;
+}
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.Navbar__icon {
+	position: relative;
+	display: block;
+	padding: 0 10px;
+}
+
+.navbar__icon svg {
+	width: 25px;
+	height: 25px;
+}
+
+.Navbar .Number {
+	position: absolute;
+	top: -10px;
+	right: 2px;
+	font-size: 12px;
+	background-color: #da3f3f;
+	height: 22px;
+	width: 22px;
+	color: #fff;
+	line-height: 22px;
+	border-radius: 50%;
+	text-align: center;
+}

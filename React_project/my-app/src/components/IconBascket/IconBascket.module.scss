@@ -1,0 +1,24 @@
+.Bascket {
+	position: relative;
+	display: block;
+	padding: 0 10px;
+}
+
+svg {
+	width: 25px;
+	height: 25px;
+}
+
+.Number {
+  position: absolute;
+  top: -10px;
+  right: 2px;
+  font-size: 12px;
+  background-color: #da3f3f;
+  height: 22px;
+  width: 22px;
+  color: #fff;
+  line-height: 22px;
+  border-radius: 50%;
+  text-align: center;
+}

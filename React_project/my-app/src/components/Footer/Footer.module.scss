@@ -1,0 +1,13 @@
+.Footer {
+  padding: 20px 0;
+  background-color: #f5f5f5;
+
+  &__wrapper {
+    text-align: center;
+  }
+  &__copyright {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+
