@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import Title from '../Title/Title';
 import picture from '../../img/image-home-07.jpg';
@@ -6,7 +5,8 @@ import styles from './Banner.module.scss';
 import '../../_btn.module.scss';
 import styleContainer from '../../_main.module.scss';
 
-const Banner = () => {
+
+const Banner = ({ handleClick }) => {
 	return (
 		<section className={styles.Banner}>
 			<div className={styleContainer.Container}>
@@ -15,13 +15,15 @@ const Banner = () => {
 					<div className={styles.Banner__overlay}>
 						<div>
 							<Title className={styles.Banner__title}>Waffle Hooded Coat</Title>
-							<Link
-								to="/"
+							{/* <Link to="/" className={classnames('Btn', 'BtnDark')}>
+								Shop Now
+							</Link> */}
+							<button
 								className={classnames('Btn', 'BtnDark')}
-								// className={`${btnStyles.Btn} ${btnStyles.Btn__BtnDark}`}
+								onClick={handleClick}
 							>
 								Shop Now
-							</Link>
+							</button>
 						</div>
 					</div>
 				</div>

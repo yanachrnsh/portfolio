@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef } from 'react';
 import Title from '../Title/Title';
 import classnames from 'classnames';
 import Product from '../Product/Product';
@@ -7,7 +7,7 @@ import styleContainer from '../../_main.module.scss';
 import styles from './Products.module.scss';
 import { Link } from 'react-router-dom';
 
-const Products = () => {
+const Products = forwardRef((props, ref) => {
 	const [productCard, setProducts] = useState([]);
 
 	useEffect(() => {
@@ -22,7 +22,7 @@ const Products = () => {
 	}, []);
 
 	return (
-		<section className={styles.Products}>
+		<div ref={ref} className={styles.Products}>
 			<div className={styleContainer.Container}>
 				<Title className={styles.Products__title}>This Week's Highlights</Title>
 				<div className={styles.Products__grid}>
@@ -36,8 +36,8 @@ const Products = () => {
 					</Link>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
-};
+});
 
 export default Products;

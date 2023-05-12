@@ -2,8 +2,11 @@ import { memo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToWishlist } from '../../slices/WishlistSlice';
+import { addToCart, setTotalCount } from '../../slices/CartSlice';
 import Button from '../Button/Button';
 import styles from './Product.module.scss';
+import classnames from 'classnames';
+import '../../_btn.module.scss';
 
 const Product = ({ product }) => {
 	const { title, img, price } = product;
@@ -12,6 +15,12 @@ const Product = ({ product }) => {
 
 	const handleAddToWishlist = () => {
 		dispatch(addToWishlist(product));
+	};
+
+	const handleAddToCart = () => {
+		dispatch(addToCart(product));
+		let priceToNum = +price;
+		dispatch(setTotalCount(priceToNum));
 	};
 
 	return (
@@ -36,7 +45,16 @@ const Product = ({ product }) => {
 						/>
 					</svg>
 				</Button>
+				<div className={styles.BtnAddToCart}>
+					<Button
+						className={classnames('Btn', 'BtnDark')}
+						onClick={handleAddToCart}
+					>
+						Add to Cart
+					</Button>
+				</div>
 			</div>
+
 			<div className={styles.Product__body}>
 				<h3>
 					<Link to="/">{title}</Link>
